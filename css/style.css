@@ -1,0 +1,600 @@
+/* التنسيقات العامة */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav {
+    background: #444;
+    padding: 0.5rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+nav a:hover {
+    background: #555;
+}
+
+main {
+    padding: 2rem;
+}
+
+/* تنسيقات قائمة الأخبار */
+.news-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.news-card {
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-card-content {
+    padding: 1rem;
+}
+
+.news-card h3 {
+    margin-top: 0;
+}
+
+.news-card a {
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 3px;
+    margin-top: 1rem;
+}
+
+/* تنسيقات صفحة الخبر المفرد */
+.news-article {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.news-article img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+/* تنسيقات لوحة التحكم */
+.admin-actions {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.admin-actions form {
+    display: grid;
+    gap: 1rem;
+}
+
+.admin-actions input,
+.admin-actions textarea {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.admin-actions textarea {
+    min-height: 200px;
+}
+
+.admin-actions button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.admin-news-item {
+    background: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-news-item .actions button {
+    margin-left: 0.5rem;
+    padding: 0.3rem 0.6rem;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.admin-news-item .actions .edit {
+    background: #4CAF50;
+    color: white;
+}
+
+.admin-news-item .actions .delete {
+    background: #f44336;
+    color: white;
+}
+
+/* تنسيقات جديدة لمعاينة الصورة */
+#imagePreview img {
+    max-width: 200px;
+    max-height: 200px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.progress-bar {
+    height: 5px;
+    background: #4CAF50;
+    width: 0%;
+    transition: width 0.3s;
+}
+
+/* تنسيقات إضافية لواجهة الإدارة */
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+.error {
+    color: #f44336;
+}
+
+.info {
+    color: #2196F3;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+#imagePreview {
+    margin: 15px 0;
+    text-align: center;
+}
+
+#imagePreview img {
+    max-width: 100%;
+    max-height: 300px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.remove-image, .cancel-edit {
+    background: #f44336 !important;
+    color: white !important;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.cancel-edit {
+    background: #ff9800 !important;
+    margin-left: 10px;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.fa-spinner {
+    margin-right: 5px;
+}
+
+/* تنسيقات جديدة لنظام المصادقة */
+#loginContainer {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.auth-form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-form h2 {
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 12px;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.auth-form button:hover {
+    background: #1a252f;
+}
+
+.auth-toggle {
+    text-align: center;
+    margin-top: 1rem;
+    color: #555;
+}
+
+.auth-toggle a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.auth-toggle a:hover {
+    text-decoration: underline;
+}
+
+/* تحسينات لواجهة الإدارة */
+#logoutBtn {
+    background: #e74c3c;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+#logoutBtn:hover {
+    background: #c0392b;
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #555;
+    font-size: 18px;
+}
+
+.error {
+    color: #e74c3c;
+    background: #fdecea;
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* تحسينات للزر إلغاء التعديل */
+.cancel-edit {
+    background: #e67e22 !important;
+    margin-top: 10px;
+}
+
+.cancel-edit:hover {
+    background: #d35400 !important;
+}
+
+/* تنسيقات قسم التعليقات والتقييمات */
+.comments-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ratings-container {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.rating-stars {
+    font-size: 32px;
+    margin: 10px 0;
+    cursor: pointer;
+    user-select: none;
+}
+
+.rating-stars span {
+    margin: 0 5px;
+    color: #ddd;
+    transition: all 0.2s;
+}
+
+.rating-stars span:hover,
+.rating-stars span:hover ~ span {
+    color: #ffc107 !important;
+}
+
+.average-rating {
+    color: #666;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.comments-container h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 22px;
+}
+
+.comment-form {
+    margin: 20px 0;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.comment-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.comment-form button {
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.comment-form button:hover {
+    background: #1a252f;
+}
+
+.comment-form button:disabled {
+    background: #95a5a6;
+    cursor: not-allowed;
+}
+
+.comments-list {
+    margin-top: 20px;
+}
+
+.comment-item {
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #f9f9f9;
+    border-radius: 6px;
+    border-left: 3px solid #3498db;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.comment-author {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.comment-date {
+    color: #7f8c8d;
+}
+
+.comment-text {
+    line-height: 1.6;
+    color: #333;
+}
+
+.loading {
+    text-align: center;
+    color: #666;
+    padding: 20px;
+}
+
+.no-comments {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 20px;
+}
+
+.error {
+    color: #e74c3c;
+    text-align: center;
+    padding: 10px;
+}
+
+/* تنسيقات الصورة في الخبر */
+.news-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.news-meta {
+    color: #7f8c8d;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.news-content {
+    line-height: 1.8;
+    font-size: 16px;
+    color: #333;
+}
+
+/* تنسيقات قسم المسودات */
+.drafts-section {
+  background: #fff;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.draft-item {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.draft-item h3 {
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.draft-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.draft-actions button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.draft-actions button:nth-child(1) {
+  background: #3498db;
+  color: white;
+}
+
+.draft-actions button:nth-child(2) {
+  background: #2ecc71;
+  color: white;
+}
+
+.draft-actions button:nth-child(3) {
+  background: #e74c3c;
+  color: white;
+}
+
+.no-items {
+  color: #777;
+  text-align: center;
+  padding: 20px;
+}
+
+/* تنسيقات الإحصائيات */
+.news-stats {
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.stat-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.stat-value {
+  color: #2c3e50;
+}
+
+/* تنسيقات النافذة المنبثقة */
+.stats-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 800px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.views-list {
+  margin-top: 15px;
+}
+
+.view-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* تنسيقات للأجهزة الصغيرة */
+@media (max-width: 768px) {
+  .view-item {
+    grid-template-columns: 1fr;
+  }
+}
+

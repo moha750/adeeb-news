@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>لوحة تحكم منصة الأخبار</h1>
+        <nav>
+            <a href="index.html">الرئيسية</a>
+            <a href="admin.html">لوحة التحكم</a>
+            <a href="#" id="logoutBtn" style="display:none;"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+        </nav>
+    </header>
+
+    <main id="adminContent" style="display:none;">
+        <section class="admin-actions">
+            <h2>إضافة خبر جديد</h2>
+            <form id="addNewsForm">
+                <input type="text" id="newsTitle" placeholder="عنوان الخبر" required>
+                <textarea id="newsContent" placeholder="محتوى الخبر" required></textarea>
+                <div class="form-group">
+                    <label for="newsImageFile">صورة الخبر:</label>
+                    <input type="file" id="newsImageFile" accept="image/*">
+                    <div id="imagePreview" style="margin-top: 10px;"></div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" name="publish">نشر الخبر</button>
+                    <button type="button" id="saveDraftBtn">حفظ كمسودة</button>
+                    <button type="button" class="cancel-edit">إلغاء</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="news-list">
+            <h2>إدارة الأخبار الحالية</h2>
+            <div id="adminNewsContainer">
+                <!-- سيتم ملء الأخبار هنا عبر JavaScript -->
+            </div>
+        </section>
+
+        <!-- قسم جديد لعرض المسودات -->
+        <section class="drafts-section">
+            <h2>المسودات المحفوظة</h2>
+            <div id="draftsContainer"></div>
+        </section>
+    </main>
+
+    <div id="loginContainer">
+        <section class="auth-form">
+            <div id="loginSection">
+                <h2><i class="fas fa-sign-in-alt"></i> تسجيل الدخول</h2>
+                <form id="loginForm">
+                    <input type="email" id="loginEmail" placeholder="البريد الإلكتروني" required>
+                    <input type="password" id="loginPassword" placeholder="كلمة المرور" required>
+                    <button type="submit"><i class="fas fa-sign-in-alt"></i> تسجيل الدخول</button>
+                </form>
+                <p class="auth-toggle">ليس لديك حساب؟ <a href="#" id="showRegister">إنشاء حساب</a></p>
+            </div>
+
+            <div id="registerSection" style="display:none;">
+                <h2><i class="fas fa-user-plus"></i> إنشاء حساب جديد</h2>
+                <form id="registerForm">
+                    <input type="email" id="registerEmail" placeholder="البريد الإلكتروني" required>
+                    <input type="password" id="registerPassword" placeholder="كلمة المرور (6 أحرف على الأقل)" required
+                        minlength="6">
+                    <button type="submit"><i class="fas fa-user-plus"></i> إنشاء حساب</button>
+                </form>
+                <p class="auth-toggle">لديك حساب بالفعل؟ <a href="#" id="showLogin">تسجيل الدخول</a></p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

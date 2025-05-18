@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قراءة الخبر</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>منصة الأخبار</h1>
+        <nav>
+            <a href="index.html">الرئيسية</a>
+            <a href="admin.html">لوحة التحكم</a>
+        </nav>
+    </header>
+
+    <main>
+        <article class="news-article" id="newsArticle">
+            <!-- سيتم ملء محتوى الخبر هنا عبر JavaScript -->
+        </article>
+
+        <!-- قسم التعليقات والتقييمات الجديد -->
+        <section class="comments-section" id="commentsSection" style="display:none;">
+            <div class="ratings-container">
+                <h3>تقييم الخبر</h3>
+                <div class="rating-stars">
+                    <span data-value="1">☆</span>
+                    <span data-value="2">☆</span>
+                    <span data-value="3">☆</span>
+                    <span data-value="4">☆</span>
+                    <span data-value="5">☆</span>
+                </div>
+                <p class="rating-text">قيم هذا الخبر</p>
+                <p class="average-rating"></p>
+            </div>
+
+            <div class="comments-container">
+                <h3>التعليقات <span id="commentsCount">(0)</span></h3>
+                
+                <form id="commentForm" class="comment-form">
+                    <input type="text" id="commentName" placeholder="اسمك" required>
+                    <textarea id="commentText" placeholder="اكتب تعليقك هنا..." required></textarea>
+                    <button type="submit">إرسال التعليق</button>
+                </form>
+
+                <div id="commentsList" class="comments-list">
+                    <!-- التعليقات تظهر هنا -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- إضافة Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+
+    <!-- ملفات JavaScript الخاصة بنا -->
+    <script src="js/news.js"></script>
+</body>
+
+</html>
