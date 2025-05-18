@@ -334,23 +334,17 @@ async function displayAdminNews() {
 
 async function getNewsStats(newsId) {
   try {
-    // إجمالي المشاهدات
-    const totalViews = await db.collection('views')
+    // إجمالي المشاهدات (بدون count())
+    const totalQuery = await db.collection('views')
       .where('newsId', '==', newsId)
-      .count()
       .get();
-
+    
     // المشاهدات الفريدة
-    const uniqueViews = await db.collection('views')
-      .where('newsId', '==', newsId)
-      .select('ipAddress')
-      .get();
-
-    const uniqueIPs = new Set(uniqueViews.docs.map(doc => doc.data().ipAddress));
+    const uniqueIPs = [...new Set(totalQuery.docs.map(doc => doc.data().ipAddress))];
 
     return {
-      totalViews: totalViews.data().count,
-      uniqueViews: uniqueIPs.size
+      totalViews: totalQuery.size, // استخدام size بدلاً من count
+      uniqueViews: uniqueIPs.length
     };
   } catch (error) {
     console.error("Error getting stats:", error);

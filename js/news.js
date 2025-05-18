@@ -273,9 +273,8 @@ async function recordView() {
     if (!newsId) return;
 
     // الحصول على معلومات الزائر
-    const ipResponse = await fetch('https://api.ipify.org?format=json');
-    const ipData = await ipResponse.json();
-    const ipAddress = ipData.ip;
+const ipAddress = '0.0.0.0';  // فقط لاختبار
+
 
     await db.collection('views').add({
       newsId,
@@ -294,12 +293,7 @@ async function recordView() {
   }
 }
 
-// استدعاء الدالة عند تحميل الخبر
 window.onload = async () => {
   await displaySingleNews();
   await recordView();
 };
-
-
-// تشغيل الدالة عند تحميل الصفحة
-window.onload = displaySingleNews;
